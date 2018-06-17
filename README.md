@@ -44,9 +44,9 @@ This model uses simplified vehicle dynamics model and does not account for compl
 
 ## Timestep Length (N) and Elapsed Duration (dt)
 
-The prediction horizon ‘T’ is the duration over which future predictions are made. T is the product of two other variables, timesteps ‘N’ and elapsed time duration ‘dt’. 
-For example, if N were 20 and dt were 0.5, then T would be 10 seconds.
-N, dt, and T are the hyperparameters which we need to tune for each model predictive controller. There are some general guidelines regarding these hyperparameters value selection are given. T should be as large as possible, while dt should be as small as possible. With proper value, model will track the path for both low and high speed closely. 
+The prediction horizon ‘T’ is the duration over which future predictions are made. T is the product of two other variables, timesteps ‘N’ and elapsed time duration ‘dt’.  
+For example, if N were 20 and dt were 0.5, then T would be 10 seconds.  
+N, dt, and T are the hyperparameters which we need to tune for each model predictive controller. There are some general guidelines regarding these hyperparameters value selection are given. T should be as large as possible, while dt should be as small as possible. With proper value, model will track the path for both low and high speed closely.   
 Different values have been tried in this MPC model. With higher values of N (e.g. 20), dt(e.g. 0.5), car started oscilating and for lower values of N(e.g. 5), dt (e.g. 0.5), car could not turn closely to predicted path.
 
 Eventually the value of N(10) and dt(0.1) prove to be a good hyperparameters value, which has given a decent MPC model output.
