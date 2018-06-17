@@ -15,26 +15,28 @@ The objective of this project was to use Model Predictive Control Method to driv
 ## The Model
 This model had used the basic Car Kinematic model. Using Car current position, velocity, direction etc, its next status has been calculated. This model doesn’t consider the the detailed tire-road dynamics. 
 Following are the model equations:
-
-x[t] = x[t-1] + v[t-1] * cos(psi[t-1]) * dt
-y[t] = y[t-1] + v[t-1] * sin(psi[t-1]) * dt
-psi[t] = psi[t-1] + v[t-1] / Lf * delta[t-1] * dt
-v[t] = v[t-1] + a[t-1] * dt
-cte[t] = f(x[t-1]) - y[t-1] + v[t-1] * sin(epsi[t-1]) * dt
-epsi[t] = psi[t] - psides[t-1] + v[t-1] * delta[t-1] / Lf * dt
+```
+x[t] = x[t-1] + v[t-1] * cos(psi[t-1]) * dt  
+y[t] = y[t-1] + v[t-1] * sin(psi[t-1]) * dt  
+psi[t] = psi[t-1] + v[t-1] / Lf * delta[t-1] * dt  
+v[t] = v[t-1] + a[t-1] * dt  
+cte[t] = f(x[t-1]) - y[t-1] + v[t-1] * sin(epsi[t-1]) * dt  
+epsi[t] = psi[t] - psides[t-1] + v[t-1] * delta[t-1] / Lf * dt  
+```
 
 Here, model states are:
-x: Position
-y: Position  
-psi: Orientation 
-v: Velocity 
-cte: Cross-track error 
-epsi: Orientation error  
+x: Position  
+y: Position   
+psi: Orientation  
+v: Velocity  
+cte: Cross-track error  
+epsi: Orientation error   
 
 Other parameters is, Lf: Distance between Car CG and front axle and, dt:  Time duration for the prediction.
 Following are control input:
-a : Acceleration
-delta : Steering angle 
+
+a : Acceleration  
+delta : Steering angle   
 
 This model uses simplified vehicle dynamics model and does not account for complex  cornering forces which causes tire slip.
 
