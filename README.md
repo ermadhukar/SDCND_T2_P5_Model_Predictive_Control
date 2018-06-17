@@ -24,7 +24,8 @@ cte[t] = f(x[t-1]) - y[t-1] + v[t-1] * sin(epsi[t-1]) * dt
 epsi[t] = psi[t] - psides[t-1] + v[t-1] * delta[t-1] / Lf * dt  
 ```
 
-Here, model states are:  
+Here, model states are: 
+
 x: Position  
 y: Position   
 psi: Orientation  
@@ -33,8 +34,8 @@ cte: Cross-track error
 epsi: Orientation error   
 
 Other parameters is, Lf: Distance between Car CG and front axle and, dt:  Time duration for the prediction.
-Following are control input:
 
+Following are control input:  
 a : Acceleration  
 delta : Steering angle   
 
